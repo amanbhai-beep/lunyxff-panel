@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.22.1)
+project("lunyxoverlay")
+add_library(lunyxoverlay SHARED main.cpp)
+find_library(log-lib log)
+find_library(gles-lib GLESv3)
+find_library(egl-lib EGL)
+find_library(android-lib android)
+target_link_libraries(lunyxoverlay ${log-lib} ${gles-lib} ${egl-lib} ${android-lib})
